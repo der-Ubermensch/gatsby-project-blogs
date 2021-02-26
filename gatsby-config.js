@@ -10,5 +10,16 @@ module.exports = {
     title: 'The Great Gatsby!',
     author: 'Philip Kimani'
   },
-  plugins: [`gatsby-plugin-sass`],
+  plugins: [`gatsby-plugin-sass`,
+          
+          {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+              name: `pages`,
+              path: `${__dirname}/src/pages/`,
+            },
+          },
+
+          
+  ],
 }
