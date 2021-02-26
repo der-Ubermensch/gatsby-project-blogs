@@ -6,5 +6,9 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: 'The Great Gatsby!',
+    author: 'Philip Kimani'
+  },
+  plugins: [`gatsby-plugin-sass`],
 }
