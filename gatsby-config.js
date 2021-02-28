@@ -10,8 +10,16 @@ module.exports = {
     title: 'The Great Gatsby!',
     author: 'Philip Kimani'
   },
-  plugins: [`gatsby-plugin-sass`,
-          
+  plugins: [
+          {
+            resolve: `gatsby-source-contentful`,
+            options: {
+              spaceId: process.env.CONTENTFUL_SPACE_ID,
+              accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+            },
+          },
+
+          `gatsby-plugin-sass`,
           {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -49,13 +57,13 @@ module.exports = {
               gfm: true,
               // Plugins configs
               plugins: [
-                          // gatsby-remark-relative-images must go before gatsby-remark-images
-                  {
-                    resolve: `gatsby-remark-relative-images`,
+                // gatsby-remark-relative-images must go before gatsby-remark-images
+                // {
+                  //   resolve: `gatsby-remark-relative-images`,
                     // options: {
-                    //   // [Optional] The root of "media_folder" in your config.yml
-                    //   // Defaults to "static"
-                    //   staticFolderName: 'static',
+                      //   // [Optional] The root of "media_folder" in your config.yml
+                      //   // Defaults to "static"
+                      //   staticFolderName: 'static',
                     //   // [Optional] Include the following fields, use dot notation for nested fields
                     //   // All fields are included by default
                     //   include: ['featured'],
@@ -63,8 +71,9 @@ module.exports = {
                     //   // No fields are excluded by default
                     //   exclude: ['featured.skip'],
                     // },
-                  },
-
+                    // },
+                    
+                  `gatsby-remark-relative-images`,
                   {
                     resolve: `gatsby-remark-images`,
                     options: { maxWidth: 1024, linkImagesToOriginal: false },
