@@ -6,6 +6,8 @@ date: "2021-02-26"
 <!-- blogpost content -->
 I just launched a new project!
 
+![Grass](./grass.jpg)
+
 ## Topics Covered
 
 1. Gatsby

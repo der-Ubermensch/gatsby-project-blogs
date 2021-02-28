@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  /* Your site config here n=b*/
   siteMetadata: {
     title: 'The Great Gatsby!',
     author: 'Philip Kimani'
@@ -21,6 +21,22 @@ module.exports = {
           },
 
           {
+            resolve: `gatsby-plugin-sharp`,
+            options: {
+              // Defaults used for gatsbyImageData and StaticImage
+              defaults: {},
+              // Set to false to allow builds to continue on image errors
+              failOnError: true,
+              // deprecated options and their defaults:
+              base64Width: 20,
+              //forceBase64Format: `png jpg`, // valid formats: png,jpg,webp
+              useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
+              stripMetadata: true,
+              defaultQuality: 50,
+            },
+          },
+
+          {
             resolve: `gatsby-transformer-remark`,
             options: {
               // CommonMark mode (default: true)
@@ -32,7 +48,29 @@ module.exports = {
               // GitHub Flavored Markdown mode (default: true)
               gfm: true,
               // Plugins configs
-              plugins: [],
+              plugins: [
+                          // gatsby-remark-relative-images must go before gatsby-remark-images
+                  {
+                    resolve: `gatsby-remark-relative-images`,
+                    // options: {
+                    //   // [Optional] The root of "media_folder" in your config.yml
+                    //   // Defaults to "static"
+                    //   staticFolderName: 'static',
+                    //   // [Optional] Include the following fields, use dot notation for nested fields
+                    //   // All fields are included by default
+                    //   include: ['featured'],
+                    //   // [Optional] Exclude the following fields, use dot notation for nested fields
+                    //   // No fields are excluded by default
+                    //   exclude: ['featured.skip'],
+                    // },
+                  },
+
+                  {
+                    resolve: `gatsby-remark-images`,
+                    options: { maxWidth: 1024, linkImagesToOriginal: false },
+                  },
+
+              ],
             },
           },
 
