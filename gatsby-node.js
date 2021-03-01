@@ -26,10 +26,14 @@ exports.onCreateNode = ({ node, actions }) => {
       allMarkdownRemark(limit: $limit) {
         edges {
           node {
-            fields {
-              slug
-            }
+            fields { slug }
           }
+        }
+      }
+
+      allContentfulBlogPost {
+        edges {
+          node { slug }
         }
       }
     }
@@ -37,24 +41,26 @@ exports.onCreateNode = ({ node, actions }) => {
     if (result.errors) {
       throw result.errors
     }
-    // 3. Create new pages
+    // 3. Create new pages --Markdown
     result.data.allMarkdownRemark.edges.forEach(edge => {
         createPage({
           // Path for this page — required
           path: `/blog/${edge.node.fields.slug}`,
           component: blogPostTemplate,
-          context: {
-              slug: edge.node.fields.slug
-            // Add optional context data to be inserted
-            // as props into the page component..
-            //
-            // The context data can also be used as
-            // arguments to the page GraphQL query.
-            //
-            // The page "path" is always available as a GraphQL
-            // argument.
-          },
+          context: { slug: edge.node.fields.slug },
         })
       })
+      
+    // 3. b Create new pages --Contentful
+    result.data.allContentfulBlogPost.edges.forEach(edge => {
+        createPage({
+          // Path for this page — required
+          path: `/blog/${edge.node.slug}`,
+          component: blogPostTemplate,
+          context: { slug: edge.node.slug },
+        })
+      })
+
+
     })
   }
