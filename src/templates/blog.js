@@ -1,5 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { BLOCKS } from "@contentful/rich-text-types";
+//import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Layout from '../components/layout';
@@ -14,18 +16,43 @@ export const query = graphql`query ($slug: String!) {
         html
       }
 
-      contentfulBlogPost(slug: {eq: $slug}) {
-        title
-        publishedDate(formatString: "MMMM Do, YYYY")
-        body {
-          raw
+    contentfulBlogPost(slug: {eq: $slug}) {
+      title
+      slug
+      publishedDate(formatString: "MMMM Do, YYYY")
+      body {
+        raw
+        references {
+          title
+          file {url}
+          fixed(width: 1024) { width height src }
         }
       }
+    }	
       
   }`
 
+ 
+  
+
 const Blog = (props) => {
-    //const { title, publishedDate, body } = props.data.contentfulBlogPost;
+
+    //  const urlx  = props.data.contentfulBlogPost.body.references[0];
+    //  console.log("-------",{urlx});
+
+    const options = {
+      renderNode: {
+        [BLOCKS.EMBEDDED_ASSET]: node => {
+          console.log("---------------------", node)
+          // const { file } = node.data.target.fields;
+          // const { url } = file;
+          const url = props.data.contentfulBlogPost.body.references[0].file.url;
+          const alt = props.data.contentfulBlogPost.body.references[0].title;
+          return <img src={url} alt={alt}/>;
+        }
+      }
+    };
+
     
     return (
         <Layout>
@@ -39,7 +66,11 @@ const Blog = (props) => {
              <>
               <h1>{ props.data.contentfulBlogPost.title }</h1> 
               <p>{ props.data.contentfulBlogPost.publishedDate }</p>
-              { documentToReactComponents( JSON.parse(props.data.contentfulBlogPost.body.raw) ) }
+             
+              { documentToReactComponents( JSON.parse(props.data.contentfulBlogPost.body.raw), options  )}
+              
+              {/* { documentToReactComponents( props.data.contentfulBlogPost[0], options ) } */}
+
              </>
             }
         </Layout>

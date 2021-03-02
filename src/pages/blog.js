@@ -12,6 +12,7 @@ const  BlogPage = () => {
         allMarkdownRemark {
           edges {
             node {
+              id
               frontmatter { title date }
               fields { slug }
             }
@@ -20,15 +21,15 @@ const  BlogPage = () => {
 
         allContentfulBlogPost ( sort: { fields: publishedDate, order: DESC } ){
           edges {
-            node { title slug publishedDate(formatString:"MMMM Do, YYYY") }
+            node { id title slug publishedDate(formatString:"MMMM Do, YYYY") }
           }
         }
       }`);
 
     const blogsMd = data.allMarkdownRemark.edges.map((edge) => {
-      const {slug, title, date } = { ...edge.node.fields, ...edge.node.frontmatter }
+      const { slug, title, date } = { ...edge.node.fields, ...edge.node.frontmatter }
         return (
-        <li className={blogStyles.post}>
+        <li className={blogStyles.post} key={edge.node.id}>
             <Link to={`/blog/${slug}`}>
               <h2>{title}</h2>
               <h6>MD</h6>
@@ -39,9 +40,9 @@ const  BlogPage = () => {
     });
 
     const blogsCms = data.allContentfulBlogPost.edges.map((edge) => {
-      const { slug, title, publishedDate } = edge.node
+      const { id, slug, title, publishedDate } = edge.node
       return (
-      <li className={blogStyles.post}>
+      <li className={blogStyles.post} key={id}>
           <Link to={`/blog/${slug}`}>
             <h2>{title}</h2>
             <h6>CMS</h6>
