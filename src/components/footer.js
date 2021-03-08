@@ -16,6 +16,8 @@ const Footer = () => {
         <footer className={footerStyles.footer}>
             <p>Created by {/*der-Ubermensch*/
             data.site.siteMetadata.author}, &#169; 2021.</p>
+            <p>Created my free logo at <a href="https://LogoMakr.com">LogoMakr.com</a> </p>
+            
         </footer>
     )
 }
