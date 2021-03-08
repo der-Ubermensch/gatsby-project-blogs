@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="static/favicon.ico" width="60" />
+    <img alt="Gatsby" src="static/favicon.ico" width="120" />
   </a>
 </p>
 <h1 align="center">
