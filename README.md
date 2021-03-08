@@ -18,8 +18,9 @@ About                                     | Contact
 
 The project uses Gatsby's GraphQL API to dynamically query data into the site. It also makes use of Contentful for setting up post data.
 ## 💫 Deployed Site
-The site can be found at https://condescending-bell-d62c38.netlify.app
 [![Visit site](https://www.netlify.com/img/deploy/button.svg)](https://condescending-bell-d62c38.netlify.app)
+
+The site can be found at https://condescending-bell-d62c38.netlify.app
 
 ## 🚀 Quick start
 
