@@ -1,12 +1,15 @@
 .container {
     margin: 0 auto;
+    max-width: 750px;
     padding: 1rem;
 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
+    color: #fff;
 
-.content {
-    flex-grow: 1;
+    p {
+        font-size: .8rem;
+        font-style: italic;
+    }
 }

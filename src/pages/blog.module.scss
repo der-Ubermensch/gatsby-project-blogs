@@ -1,3 +1,18 @@
+@import "../styles/assets/variables";
+
+.container {
+    margin: 0 auto;
+    max-width: 750px;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #fff;
+    box-shadow: $circleShadow;
+
+}
+
 .posts {
     list-style-type: none;
     margin: 0;
@@ -5,17 +20,18 @@
 
 .post {
     margin: 1rem 0;
+    
 
     a {
-        background: #f4f4f4;
+        background: $g-01-rev;
         color: #000;
         display: block;
-        padding: 1rem;
+        padding: 1rem 2.5rem;
         text-decoration: none;
         border-radius: 15px 50px;
 
         &:hover {
-            background: #e4e4e4;
+            background: $m-02;
         }
     }
 
@@ -24,7 +40,7 @@
     }
 
     p {
-        color: #777;
+        color: #fff;
         font-size: .8rem;
         font-style: italic;
     }

@@ -3,6 +3,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 
 import Layout from "../components/layout";
 import blogStyles from "./blog.module.scss";
+import Head from "../components/head";
 
 
 const  BlogPage = () => {
@@ -55,13 +56,16 @@ const  BlogPage = () => {
 
     return (
         <Layout>
+        <Head title="Blog"/>
 
-        <h1>Blog</h1>
-        <p>Posts will show up here later on.</p>
-        <ol className={blogStyles.posts}>
-          { blogsMd }
-          { blogsCms }
-        </ol>
+        <div className={blogStyles.container}>
+          <h1>Blog</h1>
+          <p>I used graphql to make the relevant data queries. The first two posts are from markdown files stored locally on the file system and the rest are fetched from Contentful.  </p>
+          <ol className={blogStyles.posts}>
+            { blogsMd }
+            { blogsCms }
+          </ol>
+        </div>
 
         </Layout>
     )

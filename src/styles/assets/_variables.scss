@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
+
+$font-01: "Barlow", sans-serif;
+$font-02: "Barlow Condensed", sans-serif;
+
+$m-01: #FB8A8A;
+$m-02: #FFEDC0;
+
+$bg-01: #695681;
+$bg-02: #36184F;
+$bg-03: #32243E;
+
+$g-01: linear-gradient(90deg, #FFEDC0 0%, #FF9D87 100%);
+$g-01-rev: linear-gradient(90deg, #FF9D87 0%, #FFEDC0 100%);
+$g-02: linear-gradient(90deg, #8077EA 13.7%, #EB73FF 94.65%);
+$g-01-02: linear-gradient(90deg, #FF9D87 25%, #8077EA 86.3%);
+
+$cubic: cubic-bezier(0.4, 0.35, 0, 1.53);
+$cubic2: cubic-bezier(0.18, 0.89, 0.32, 1.15);
+
+$circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
+inset 5px 0px 5px rgba($bg-03, 0.3),
+inset 5px 5px 20px rgba($bg-03, 0.25),
+2px 2px 5px rgba(white, 0.2);
+
+
+@mixin sm {
+    @media screen and (max-width: 799px) {
+        @content;
+    }
+}
+
+@mixin height {
+    @media screen and (max-height:660px) {
+        @content;
+    }
+}
