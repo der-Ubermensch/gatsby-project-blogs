@@ -38,9 +38,6 @@ const Blog = (props) => {
     const options = {
       renderNode: {
         [BLOCKS.EMBEDDED_ASSET]: node => {
-          console.log("---------------------", node)
-          // const { file } = node.data.target.fields;
-          // const { url } = file;
           const url = props.data.contentfulBlogPost.body.references[0].file.url;
           const alt = props.data.contentfulBlogPost.body.references[0].title;
           return <img src={url} alt={alt}/>;
@@ -66,7 +63,6 @@ const Blog = (props) => {
                 <p>{ props.data.contentfulBlogPost.publishedDate }</p>
               
                 { documentToReactComponents( JSON.parse(props.data.contentfulBlogPost.body.raw), options  )}
-                {/* { documentToReactComponents( props.data.contentfulBlogPost[0], options ) } */}
              </div>
             }
         </Layout>

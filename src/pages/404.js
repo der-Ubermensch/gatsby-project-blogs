@@ -8,7 +8,7 @@ const NotFound = () => {
     return (
         <Layout>
             <Head title="404"/>
-            <h1>Oops! We could not find what you are looking for. </h1>
+            <h1>Oops! We could not find what you are looking for.</h1>
             <p><Link to="/">Head Home</Link></p>
         </Layout>
     )
