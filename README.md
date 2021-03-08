@@ -1,6 +1,6 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.com">
+  <a href="https://condescending-bell-d62c38.netlify.app">
     <img alt="Gatsby" src="static/favicon.ico" width="120" />
   </a>
 </p>
@@ -17,6 +17,9 @@ About                                     | Contact
 ![Design for the About page](./src/pages/images/About.png) | ![Design for the Contact page](./src/pages/images/Contact.png)
 
 The project uses Gatsby's GraphQL API to dynamically query data into the site. It also makes use of Contentful for setting up post data.
+## 💫 Deployed Site
+The site can be found at https://condescending-bell-d62c38.netlify.app
+[![Visit site](https://www.netlify.com/img/deploy/button.svg)](https://condescending-bell-d62c38.netlify.app)
 
 ## 🚀 Quick start
 
@@ -81,10 +84,6 @@ Here is a list of the dependencies you'll see in this Gatsby project.
 Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here you will find more information about the dependencies and their configuration.
 
 
-## 💫 Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-hello-world)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
