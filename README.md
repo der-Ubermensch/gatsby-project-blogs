@@ -14,7 +14,6 @@ Home                                      | Blogs
 :----------------------------------------:|:--------------------------------------:
 ![Design for the homepage](./src/pages/images/Home.png) | ![Design for the Blogs page](./src/pages/images/Blog.png)
 About                                     | Contact
-:----------------------------------------:|:--------------------------------------:
 ![Design for the About page](./src/pages/images/About.png) | ![Design for the Contact page](./src/pages/images/Contact.png)
 
 The project uses Gatsby's GraphQL API to dynamically query data into the site. It also makes use of Contentful for setting up post data.
@@ -45,7 +44,7 @@ The project uses Gatsby's GraphQL API to dynamically query data into the site. I
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    Open the `gatsby-project` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
 ## 🧐 What's inside?
 
